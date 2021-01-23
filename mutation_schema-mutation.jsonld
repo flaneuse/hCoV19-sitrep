@@ -1,0 +1,281 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "outbreakmutations": "http://discovery.biothings.io/view/"
+  },
+  "@graph": [
+    {
+      "@id": "outbreakmutations:Mutation",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "List of mutations associated with a virus sequence",
+      "rdfs:label": "Mutation",
+      "rdfs:subClassOf": {
+        "@id": "bioschemas:BioChemEntity"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "gene": {
+            "description": "Gene where the mutation occurs"
+          },
+          "ref_codon": {
+            "description": "Nucleotide (A, T, G, C) of the reference sequence where the nucleotide occurs"
+          },
+          "alt_codon": {
+            "description": "Alternative nucleotide codon where the mutation occurs"
+          },
+          "ref_aa": {
+            "description": "Reference amino acid at the mutation site.  Will be null for an insertion"
+          },
+          "alt_aa": {
+            "description": "Alternative amino acid where the mutation occurs. Will be null for substitutions which frame shift or deletions."
+          },
+          "is_synonymous": {
+            "description": "For a substitution, if the change is synonymous or non-synonymous"
+          },
+          "pos_aa": {
+            "description": "Position in the gene, in amino acid coordinates"
+          },
+          "pos_nuc": {
+            "description": "Mutation position in the gene, in nucleotide coordinates"
+          },
+          "aa_map_coords": {
+            "description": "Cumulative length of upstream translated genes in amino acids"
+          },
+          "nuc_map_coordinates": {
+            "description": "Cumulative length of upstream translated genes in nucleotide coordinates"
+          },
+          "other_pos_nuc": {
+            "description": "Nucleotide position in an alternate coordinate system"
+          },
+          "other_pos_aa": {
+            "description": "Amino acid position in an alternate coordinate system"
+          },
+          "other_gene_name": {
+            "description": "Gene name for the alternate coordinate system"
+          },
+          "mutation_type": {
+            "description": "Mutation type: substitution, deletion, or insertion"
+          },
+          "change_length_nuc": {
+            "description": "Length of the change, in nucleotides. Negative indicates deletion, positive insertion"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "@id": "outbreakmutations:gene",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Gene where the mutation occurs",
+      "rdfs:label": "gene",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:ref_codon",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Nucleotide (A, T, G, C) of the reference sequence where the nucleotide occurs",
+      "rdfs:label": "ref_codon",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:alt_codon",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Alternative nucleotide codon where the mutation occurs",
+      "rdfs:label": "alt_codon",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:ref_aa",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Reference amino acid at the mutation site.  Will be null for an insertion",
+      "rdfs:label": "ref_aa",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:alt_aa",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Alternative amino acid where the mutation occurs. Will be null for substitutions which frame shift or deletions.",
+      "rdfs:label": "alt_aa",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:is_synonymous",
+      "@type": "rdf:Property",
+      "rdfs:comment": "For a substitution, if the change is synonymous or non-synonymous",
+      "rdfs:label": "is_synonymous",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:pos_aa",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Position in the gene, in amino acid coordinates",
+      "rdfs:label": "pos_aa",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:pos_nuc",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Mutation position in the gene, in nucleotide coordinates",
+      "rdfs:label": "pos_nuc",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:aa_map_coords",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Cumulative length of upstream translated genes in amino acids",
+      "rdfs:label": "aa_map_coords",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:nuc_map_coordinates",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Cumulative length of upstream translated genes in nucleotide coordinates",
+      "rdfs:label": "nuc_map_coordinates",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:other_pos_nuc",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Nucleotide position in an alternate coordinate system",
+      "rdfs:label": "other_pos_nuc",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:other_pos_aa",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Amino acid position in an alternate coordinate system",
+      "rdfs:label": "other_pos_aa",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:other_gene_name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Gene name for the alternate coordinate system",
+      "rdfs:label": "other_gene_name",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:mutation_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Mutation type: substitution, deletion, or insertion",
+      "rdfs:label": "mutation_type",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:change_length_nuc",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Length of the change, in nucleotides. Negative indicates deletion, positive insertion",
+      "rdfs:label": "change_length_nuc",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:Mutation"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    }
+  ]
+}
