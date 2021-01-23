@@ -60,8 +60,8 @@
           "mutations": {
             "description": "List of mutations present in the sequence"
           },
-          "potentialAction": {
-            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."
+          "dateModified": {
+            "description": "Date which the sequence metadata was pulled from the GISAID database"
           }
         },
         "required": [
@@ -87,6 +87,20 @@
       "@id": "outbreakmutations:submitted_date",
       "@type": "rdf:Property",
       "rdfs:comment": "Date the sequence was submitted to a data repository",
+      "rdfs:label": "submitted_date",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+        {
+      "@id": "outbreakmutations:dateModified",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date which the sequence metadata was pulled from the GISAID database",
       "rdfs:label": "submitted_date",
       "schema:domainIncludes": {
         "@id": "outbreakmutations:RnaSequence"
