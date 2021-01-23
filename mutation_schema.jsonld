@@ -1,0 +1,275 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "outbreakmutations": "http://discovery.biothings.io/view/"
+  },
+  "@graph": [
+    {
+      "@id": "outbreakmutations:RnaSequence",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Metadata for the RNA sequence of a virus",
+      "rdfs:label": "RnaSequence",
+      "rdfs:subClassOf": {
+        "@id": "bioschemas:BioChemEntity"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "collection_date": {
+            "description": "Date which the viral sample was collected"
+          },
+          "submitted_date": {
+            "description": "Date the sequence was submitted to a data repository"
+          },
+          "original_lab": {
+            "description": "Laboratory name who sequenced the virus"
+          },
+          "submitting_lab": {
+            "description": "Laboratory name who submitted the virus sequence to the public repository"
+          },
+          "gisaid_epi_isl": {
+            "description": "GISAID ID for the virus sequence"
+          },
+          "genbank_accession": {
+            "description": "Unique GenBank Accession id for the sequence"
+          },
+          "country": {
+            "description": "Country where the virus sample was collected"
+          },
+          "division": {
+            "description": "First administrative division (e.g. U.S. state) where the sample was collected"
+          },
+          "location": {
+            "description": "Most precise location information where the virus sample was collected.  Often a city or administrative level 2 (e.g. U.S. county)"
+          },
+          "pangolin_lineage": {
+            "description": "Unique lineage for the set of mutations, as classified by Pangolin"
+          },
+          "gisaid_clade": {
+            "description": "Clade, as specified by GISAID phylogenetic analysis"
+          },
+          "other_info": {
+            "description": "Other information about the sequencing"
+          },
+          "screening_method": {
+            "description": "Description for how the strain was screen, e.g. screened by S gene dropout for B.1.1.7 lineage"
+          },
+          "mutations": {
+            "description": "List of mutations present in the sequence"
+          },
+          "potentialAction": {
+            "description": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role."
+          }
+        },
+        "required": [
+          "collection_date"
+        ]
+      }
+    },
+    {
+      "@id": "outbreakmutations:collection_date",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date which the viral sample was collected",
+      "rdfs:label": "collection_date",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:submitted_date",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date the sequence was submitted to a data repository",
+      "rdfs:label": "submitted_date",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:original_lab",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Laboratory name who sequenced the virus",
+      "rdfs:label": "original_lab",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:submitting_lab",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Laboratory name who submitted the virus sequence to the public repository",
+      "rdfs:label": "submitting_lab",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:gisaid_epi_isl",
+      "@type": "rdf:Property",
+      "rdfs:comment": "GISAID ID for the virus sequence",
+      "rdfs:label": "gisaid_epi_isl",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:genbank_accession",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unique GenBank Accession id for the sequence",
+      "rdfs:label": "genbank_accession",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:country",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Country where the virus sample was collected",
+      "rdfs:label": "country",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:division",
+      "@type": "rdf:Property",
+      "rdfs:comment": "First administrative division (e.g. U.S. state) where the sample was collected",
+      "rdfs:label": "division",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:location",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Most precise location information where the virus sample was collected.  Often a city or administrative level 2 (e.g. U.S. county)",
+      "rdfs:label": "location",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:pangolin_lineage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unique lineage for the set of mutations, as classified by Pangolin",
+      "rdfs:label": "pangolin_lineage",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:gisaid_clade",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Clade, as specified by GISAID phylogenetic analysis",
+      "rdfs:label": "gisaid_clade",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:other_info",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Other information about the sequencing",
+      "rdfs:label": "other_info",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:screening_method",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description for how the strain was screen, e.g. screened by S gene dropout for B.1.1.7 lineage",
+      "rdfs:label": "screening_method",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "outbreakmutations:mutations",
+      "@type": "rdf:Property",
+      "rdfs:comment": "List of mutations present in the sequence",
+      "rdfs:label": "mutations",
+      "schema:domainIncludes": {
+        "@id": "outbreakmutations:RnaSequence"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "outbreakmutation:Mutation"
+        }
+      ]
+    }
+  ]
+}
