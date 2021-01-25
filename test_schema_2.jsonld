@@ -1,0 +1,43 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "test_schemaorg": "http://discovery.biothings.io/view/"
+  },
+  "@graph": [
+    {
+      "@id": "test_schemaorg:SchemaOrgClass",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "test #2 using Schema:Thing as a base",
+      "rdfs:label": "SchemaOrgClass",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "collection_date": {
+            "description": "Date which the viral sample was collected"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "@id": "test_schemaorg:collection_date",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date which the viral sample was collected",
+      "rdfs:label": "collection_date",
+      "schema:domainIncludes": {
+        "@id": "test_schemaorg:SchemaOrgClass"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    }
+  ]
+}
