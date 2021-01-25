@@ -3,14 +3,14 @@
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "tsrtst": "http://discovery.biothings.io/view/"
+    "test": "http://discovery.biothings.io/view/"
   },
   "@graph": [
     {
-      "@id": "tsrtst:fdsfds",
+      "@id": "test:TestClass",
       "@type": "rdfs:Class",
       "rdfs:comment": "fdsgdfgdfagfdgfdagfda",
-      "rdfs:label": "fdsfds",
+      "rdfs:label": "TestClass",
       "rdfs:subClassOf": {
         "@id": "bioschemas:BioChemEntity"
       },
@@ -26,12 +26,12 @@
       }
     },
     {
-      "@id": "tsrtst:collection_date",
+      "@id": "test:collection_date",
       "@type": "rdf:Property",
       "rdfs:comment": "Date which the viral sample was collected",
       "rdfs:label": "collection_date",
       "schema:domainIncludes": {
-        "@id": "tsrtst:fdsfds"
+        "@id": "test:TestClass"
       },
       "schema:rangeIncludes": [
         {
